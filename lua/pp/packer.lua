@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
-use { 'junegunn/fzf', run = ":call fzf#install()" }
-use { 'junegunn/fzf.vim' }
+use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
 end)
 

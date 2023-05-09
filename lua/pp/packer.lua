@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
   }
 }
 use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-
+use('nvim-tree/nvim-web-devicons')
+use('preservim/nerdtree')
 end)
 

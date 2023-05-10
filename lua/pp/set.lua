@@ -1,5 +1,4 @@
 vim.opt.guicursor = ""
-vim.opt.guifont = "NerdFont"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -34,3 +33,6 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#a1a1a1'} )
+

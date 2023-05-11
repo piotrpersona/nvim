@@ -42,5 +42,6 @@ return require('packer').startup(function(use)
 use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 use('ryanoasis/vim-devicons')
 use('preservim/nerdtree')
+use('HiPhish/nvim-ts-rainbow2')
 end)
 

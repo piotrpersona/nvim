@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<leader>got", "<cmd>GoTest<CR>")
+vim.keymap.set("v", "<leader>got", "<cmd>GoTest<CR>")
+vim.keymap.set("n", "<leader>gotf", "<cmd>GoTestFunc<CR>")
+vim.keymap.set("v", "<leader>gotf", "<cmd>GoTestFunc<CR>")
+vim.keymap.set("n", "<leader>god", "<cmd>GoDoc<CR>")

@@ -55,5 +55,14 @@ use {
     require("nvim-tree").setup {}
   end
 }
+use('preservim/nerdcommenter')
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+use {'romgrk/barbar.nvim', requires = {
+  'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+  'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+}}
 end)
 

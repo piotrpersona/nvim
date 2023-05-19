@@ -45,5 +45,7 @@ use('preservim/nerdtree')
 use('HiPhish/nvim-ts-rainbow2')
 use('fatih/vim-go')
 use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+use({ 'rose-pine/neovim', as = 'rose-pine' })
+use { "catppuccin/nvim", as = "catppuccin" }
 end)
 

@@ -1,4 +1,5 @@
 local builtin = require('telescope.builtin')
+local action_state = require('telescope.actions.state')
 -- grep
 vim.keymap.set('n', '<leader>ff', function()
     builtin.find_files({ hidden = false })
@@ -11,8 +12,9 @@ vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
 -- git
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fbr', builtin.git_branches, {})
+vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
+vim.keymap.set('n', '<leader>gbr', builtin.git_branches, {})
+vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
 -- lsp
 vim.keymap.set('n', '<leader>gd', function()
     builtin.lsp_definitions({ jump_type = "vsplit" })
@@ -29,6 +31,19 @@ vim.keymap.set('n', '<leader>th', function ()
     builtin.colorscheme({ enable_preview = true })
 end)
 
+
+function TelescopeDiffviewOpen()
+    -- Open in diffview
+    local selected_entry = action_state.get_selected_entry()
+    local value = selected_entry.value
+    -- close Telescope window properly prior to switching windows
+    vim.api.nvim_win_close(0, true)
+    vim.cmd("stopinsert")
+    vim.schedule(function()
+        vim.cmd(("DiffviewOpen %s^!"):format(value))
+    end)
+end
+
 require("telescope").setup({
     defaults = {
         scroll_strategy = 'limit',
@@ -43,4 +58,20 @@ require("telescope").setup({
         path_display = 'smart',
         dynamic_preview_title = true,
     },
+    pickers = {
+        git_commits = {
+            mappings = {
+                i = {
+                    ["<leader>d"] = TelescopeDiffviewOpen,
+                }
+            },
+        },
+        git_branches = {
+            mappings = {
+                i = {
+                    ["<leader>d"] = TelescopeDiffviewOpen,
+                }
+            }
+        }
+    }
 })

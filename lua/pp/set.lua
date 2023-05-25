@@ -34,5 +34,5 @@ vim.opt.colorcolumn = "80"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.api.nvim_set_hl(0, 'linenr', { fg = '#6e65a1'} )
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#8efbfd'} )
 vim.opt.cursorline = true

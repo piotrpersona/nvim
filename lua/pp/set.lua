@@ -35,4 +35,4 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.api.nvim_set_hl(0, 'linenr', { fg = '#6e65a1'} )
-
+vim.opt.cursorline = true

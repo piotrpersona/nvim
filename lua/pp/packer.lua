@@ -65,5 +65,10 @@ use {'romgrk/barbar.nvim', requires = {
 }}
 use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
 use 'sunjon/shade.nvim'
+-- using packer.nvim
+use {
+  'nmac427/guess-indent.nvim',
+  config = function() require('guess-indent').setup {} end,
+}
 end)
 

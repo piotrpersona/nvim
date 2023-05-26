@@ -34,6 +34,6 @@ vim.opt.colorcolumn = "80"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.cmd [[colorscheme tokyonight-storm]]
+vim.cmd [[colorscheme rose-pine-main]]
 vim.api.nvim_set_hl(0, 'LineNr', { fg = '#ffffff'} )
 vim.opt.cursorline = true

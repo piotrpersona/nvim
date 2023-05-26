@@ -54,6 +54,9 @@ vim.keymap.set("n", "<C-J>", "<C-W><C-J>")
 vim.keymap.set("n", "<C-K>", "<C-W><C-K>")
 vim.keymap.set("n", "<C-L>", "<C-W><C-L>")
 
+-- replace current word under cursor. replace next ocurrence with `.`
 vim.keymap.set("n", "<leader>x", "*``cgn")
 vim.keymap.set("n", "<leader>X", "#``cgN")
+
+vim.keymap.set("n", ";;", ":w<CR>")
 

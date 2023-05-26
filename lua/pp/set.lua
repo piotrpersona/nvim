@@ -35,5 +35,5 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.cmd [[colorscheme rose-pine-main]]
-vim.api.nvim_set_hl(0, 'LineNr', { fg = '#ffffff'} )
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#b55387'} )
 vim.opt.cursorline = true

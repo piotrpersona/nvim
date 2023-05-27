@@ -1,7 +1,7 @@
 local builtin = require('telescope.builtin')
 local action_state = require('telescope.actions.state')
 -- grep
-vim.keymap.set('n', '<leader>ff', function()
+vim.keymap.set('n', '<leader><leader>', function()
     builtin.find_files({ hidden = false })
 end)
 vim.keymap.set('n', '<leader>fh', function()
@@ -31,7 +31,6 @@ vim.keymap.set('n', '<leader>th', function ()
     builtin.colorscheme({ enable_preview = true })
 end)
 
-
 function TelescopeDiffviewOpen()
     -- Open in diffview
     local selected_entry = action_state.get_selected_entry()
@@ -40,7 +39,7 @@ function TelescopeDiffviewOpen()
     vim.api.nvim_win_close(0, true)
     vim.cmd("stopinsert")
     vim.schedule(function()
-        vim.cmd(("DiffviewOpen %s^!"):format(value))
+        vim.cmd(("DiffviewOpen %s"):format(value))
     end)
 end
 

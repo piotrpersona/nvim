@@ -1,13 +1,13 @@
 local builtin = require('telescope.builtin')
 local action_state = require('telescope.actions.state')
 -- grep
-vim.keymap.set('n', '<leader><leader>', function()
+vim.keymap.set('n', '<leader>ff', function()
     builtin.find_files({ hidden = false })
 end)
 vim.keymap.set('n', '<leader>fh', function()
     builtin.find_files({ hidden = true })
 end)
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader><leader>', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)

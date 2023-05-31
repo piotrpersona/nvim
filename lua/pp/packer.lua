@@ -66,5 +66,7 @@ use {
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 }
 use 'nvim-tree/nvim-web-devicons'
+use "EdenEast/nightfox.nvim" 
+use 'Mofiqul/dracula.nvim'
 end)
 

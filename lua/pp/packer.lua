@@ -55,7 +55,6 @@ use {'romgrk/barbar.nvim', requires = {
   'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
 }}
 use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
-use 'sunjon/shade.nvim'
 -- using packer.nvim
 use {
   'nmac427/guess-indent.nvim',

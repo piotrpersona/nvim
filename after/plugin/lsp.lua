@@ -36,6 +36,10 @@ lsp.set_preferences({
 	}
 })
 
+require('lspconfig').gopls.setup {
+    cmd_env = {GOFLAGS="-tags=integration"}
+}
+
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer = bufnr, remap = false}
 

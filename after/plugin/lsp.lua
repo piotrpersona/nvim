@@ -37,7 +37,7 @@ lsp.set_preferences({
 })
 
 require('lspconfig').gopls.setup {
-    cmd_env = {GOFLAGS="-tags=integration"}
+    cmd_env = {GOFLAGS="-tags=wireinject"}
 }
 
 lsp.on_attach(function(client, bufnr)

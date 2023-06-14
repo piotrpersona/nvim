@@ -31,6 +31,14 @@ vim.keymap.set('n', '<leader>th', function ()
     builtin.colorscheme({ enable_preview = true })
 end)
 
+-- diffview
+vim.keymap.set('n', '<leader>dm', function()
+    vim.cmd("DiffviewOpen origin/main")
+end)
+vim.keymap.set('n', '<leader>dvc', function()
+    vim.cmd("DiffviewClose")
+end)
+
 function TelescopeDiffviewOpen()
     -- Open in diffview
     local selected_entry = action_state.get_selected_entry()

@@ -38,6 +38,9 @@ end)
 vim.keymap.set('n', '<leader>dvc', function()
     vim.cmd("DiffviewClose")
 end)
+vim.keymap.set('n', '<leader>dvo', function()
+    vim.cmd("DiffviewClose")
+end)
 
 function TelescopeDiffviewOpen()
     -- Open in diffview

@@ -56,6 +56,16 @@ end
 
 require("telescope").setup({
     defaults = {
+        vimgrep_arguments = {
+          'rg',
+          '--color=never',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          '---case',
+          '-uu' -- **This is the added flag**
+        },
         scroll_strategy = 'limit',
         layout_strategy = 'vertical',
         layout_config = {

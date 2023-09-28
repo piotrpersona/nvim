@@ -63,7 +63,7 @@ require("telescope").setup({
           '--with-filename',
           '--line-number',
           '--column',
-          '---case',
+          '--smart-case',
           '-uu' -- **This is the added flag**
         },
         scroll_strategy = 'limit',

@@ -64,7 +64,6 @@ require("telescope").setup({
           '--line-number',
           '--column',
           '--smart-case',
-          '-uu' -- **This is the added flag**
         },
         scroll_strategy = 'limit',
         layout_strategy = 'vertical',

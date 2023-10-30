@@ -67,5 +67,6 @@ use {
 use 'nvim-tree/nvim-web-devicons'
 use "EdenEast/nightfox.nvim" 
 use 'Mofiqul/dracula.nvim'
+use "savq/melange-nvim"
 end)
 

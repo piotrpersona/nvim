@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
+use 'nvim-tree/nvim-web-devicons'
 use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 use('ryanoasis/vim-devicons')
 use('HiPhish/nvim-ts-rainbow2')
@@ -62,12 +63,12 @@ use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 }
-use 'nvim-tree/nvim-web-devicons'
-use "EdenEast/nightfox.nvim" 
+use "EdenEast/nightfox.nvim"
 use 'Mofiqul/dracula.nvim'
 use "savq/melange-nvim"
 use 'YacineDo/mc.nvim'
 use 'piotrpersona/tele-conda'
 use "lukas-reineke/indent-blankline.nvim"
+use 'prichrd/netrw.nvim'
 end)
 

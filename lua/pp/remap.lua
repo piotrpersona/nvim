@@ -58,6 +58,7 @@ vim.keymap.set("n", "<leader>x", "*``cgn")
 vim.keymap.set("n", "<leader>X", "#``cgN")
 
 vim.keymap.set("n", ";;", ":w<CR>")
+vim.keymap.set("n", ";a", ":wa<CR>")
 
 -- Indent highlited block
 vim.keymap.set("n", "<lt>", "<lt><lt>", { silent = true, desc = "Outdent" })

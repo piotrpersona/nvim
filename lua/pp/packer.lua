@@ -68,5 +68,6 @@ use 'Mofiqul/dracula.nvim'
 use "savq/melange-nvim"
 use 'YacineDo/mc.nvim'
 use 'piotrpersona/tele-conda'
+use "lukas-reineke/indent-blankline.nvim"
 end)
 

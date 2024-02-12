@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~//.config/nvim/lua/pp/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- pane navigation
@@ -58,3 +58,9 @@ vim.keymap.set("n", "<leader>x", "*``cgn")
 vim.keymap.set("n", "<leader>X", "#``cgN")
 
 vim.keymap.set("n", ";;", ":w<CR>")
+
+-- Indent highlited block
+vim.keymap.set("n", "<lt>", "<lt><lt>", { silent = true, desc = "Outdent" })
+vim.keymap.set("n", ">", ">>", { silent = true, desc = "Indent" })
+vim.keymap.set("v", "<lt>", "<lt>gv", { silent = true, desc = "Indent" })
+vim.keymap.set("v", ">", ">gv", { silent = true, desc = "Indent" })

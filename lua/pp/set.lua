@@ -40,3 +40,5 @@ vim.opt.cursorline = true
 -- Cursor
 vim.api.nvim_set_hl(0, 'Cursor', { bg = '#b55387' } )
 vim.api.nvim_set_hl(0, 'iCursor', { fg = '#ffffff', bg = '#4fb2bd' } )
+-- Popup menu
+vim.api.nvim_set_hl(0, 'PmenuSel', { bg = '#8153b5' } )

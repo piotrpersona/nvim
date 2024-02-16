@@ -2,8 +2,21 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-	
+
+require('mason-lspconfig').setup({
+	ensure_installed = {
+		"clangd",
+		"dotls",
+		"pylsp",
+		"golangci_lint_ls",
+		"lua_ls",
+		"docker_compose_language_service",
+		"dockerls",
+		"tsserver",
+		"rust_analyzer",
+		"bashls",
+		"gopls"
+	},
 })
 
 -- Fix Undefined global 'vim'
@@ -11,7 +24,7 @@ lsp.nvim_workspace()
 
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
@@ -37,18 +50,18 @@ lsp.set_preferences({
 })
 
 require('lspconfig').gopls.setup {
-    cmd_env = {GOFLAGS="-tags=wireinject"},
-    settings = {
-        gopls = {
-            analyses = {
-                fillstruct = true,
-            },
-        },
-    },
+	cmd_env = { GOFLAGS = "-tags=wireinject" },
+	settings = {
+		gopls = {
+			analyses = {
+				fillstruct = true,
+			},
+		},
+	},
 }
 
 lsp.on_attach(function(client, bufnr)
-	local opts = {buffer = bufnr, remap = false}
+	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -56,10 +69,10 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
 	vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
 	vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-	vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+	vim.keymap.set("n", "<leader>,", function() vim.lsp.buf.code_action() end, opts)
 	-- vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set("n", "<leader>ve", function() vim.diagnostic.show_line_diagnostics() end, opts)
+	vim.keymap.set("n", "<leader>ve", function() vim.diagnostic.show_line_diagnostics() end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 

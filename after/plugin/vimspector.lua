@@ -14,7 +14,7 @@ vim.keymap.set('n', '<leader>dc', '<cmd>call vimspector#Continue()<CR>')
 vim.keymap.set('n', '<leader>dt', '<cmd>call vimspector#ToggleBreakpoint()<CR>')
 vim.keymap.set('n', '<leader>dT', '<cmd>call vimspector#ClearBreakpoints()<CR>')
 
-vim.keymap.set('n', '<leader>dk', '<cmd>VimspectorRestart<CR>')
+vim.keymap.set('n', '<leader>dk', '<cmd>VimspectorReset<CR>')
 vim.keymap.set('n', '<leader>dh', '<cmd>VimspectorStepOut<CR>')
 vim.keymap.set('n', '<leader>dl', '<cmd>VimspectorStepInto<CR>')
 vim.keymap.set('n', '<leader>dj', '<cmd>VimspectorStepOver<CR>')

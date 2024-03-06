@@ -70,7 +70,7 @@ return require('packer').startup(function(use)
   use 'piotrpersona/tele-conda'
   use "lukas-reineke/indent-blankline.nvim"
   use 'prichrd/netrw.nvim'
-  -- use 'puremourning/vimspector'
+  use 'puremourning/vimspector'
   use 'ayu-theme/ayu-vim'
   use 'techtuner/aura-neovim'
 end)

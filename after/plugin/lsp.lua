@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
 
 lsp.preset("recommended")
 
@@ -49,10 +50,14 @@ lsp.set_preferences({
 	}
 })
 
-require('lspconfig').gopls.setup {
+lspconfig.gopls.setup {
+	cmd = { "gopls" },
 	cmd_env = { GOFLAGS = "-tags=wireinject" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 	settings = {
 		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
 			analyses = {
 				fillstruct = true,
 			},

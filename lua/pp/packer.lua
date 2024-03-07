@@ -43,7 +43,6 @@ return require('packer').startup(function(use)
   use('HiPhish/nvim-ts-rainbow2')
   use('fatih/vim-go')
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
   use { "catppuccin/nvim", as = "catppuccin" }
   use('preservim/nerdcommenter')
   use {
@@ -59,10 +58,6 @@ return require('packer').startup(function(use)
     'nmac427/guess-indent.nvim',
     config = function() require('guess-indent').setup {} end,
   }
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
   use "EdenEast/nightfox.nvim"
   use 'Mofiqul/dracula.nvim'
   use "savq/melange-nvim"
@@ -73,4 +68,6 @@ return require('packer').startup(function(use)
   use 'puremourning/vimspector'
   use 'ayu-theme/ayu-vim'
   use 'techtuner/aura-neovim'
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
+
 end)

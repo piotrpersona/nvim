@@ -50,7 +50,7 @@ lsp.set_preferences({
 	}
 })
 
-lspconfig.gopls.setup {
+lspconfig.gopls.setup({
 	cmd = { "gopls" },
 	cmd_env = { GOFLAGS = "-tags=wireinject" },
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -58,12 +58,13 @@ lspconfig.gopls.setup {
 		gopls = {
 			completeUnimported = true,
 			usePlaceholders = true,
+			staticcheck = true,
 			analyses = {
-				fillstruct = true,
+				fillstruct = true
 			},
 		},
 	},
-}
+})
 
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }

@@ -35,5 +35,5 @@ vim.opt.colorcolumn = "80"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.cmd [[colorscheme aura]]
+vim.cmd [[colorscheme rose-pine-moon]]
 setColorScheme()

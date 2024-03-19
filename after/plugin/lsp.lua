@@ -51,14 +51,9 @@ lsp.set_preferences({
 })
 
 lspconfig.gopls.setup({
-	cmd = { "gopls" },
 	cmd_env = { GOFLAGS = "-tags=wireinject" },
-	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 	settings = {
 		gopls = {
-			completeUnimported = true,
-			usePlaceholders = true,
-			staticcheck = true,
 			analyses = {
 				fillstruct = true
 			},

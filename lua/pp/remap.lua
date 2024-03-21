@@ -47,10 +47,10 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~//.config/nvim/lua/pp/packer.lua<CR>
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- pane navigation
-vim.keymap.set("n", "<C-H>", "<C-W><C-H>")
-vim.keymap.set("n", "<C-J>", "<C-W><C-J>")
-vim.keymap.set("n", "<C-K>", "<C-W><C-K>")
-vim.keymap.set("n", "<C-L>", "<C-W><C-L>")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- replace current word under cursor. replace next ocurrence with `.`
 vim.keymap.set("n", "<leader>x", "*``cgn")

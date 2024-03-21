@@ -6,3 +6,5 @@ rm -rf ~/.config/nvim/.git
 
 pip3 install pynvim
 
+git clone https://github.com/github/copilot.vim.git \
+  ~/.config/nvim/pack/github/start/copilot.vim

@@ -46,6 +46,10 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~//.config/nvim/lua/pp/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
+-- pane split
+vim.keymap.set("n", "<leader>vs", "<cmd>:vs<CR>")
+vim.keymap.set("n", "<leader>sp", "<cmd>:sp<CR>")
+
 -- pane navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")

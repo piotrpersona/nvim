@@ -51,10 +51,10 @@ vim.keymap.set("n", "<leader>vs", "<cmd>:vs<CR>")
 vim.keymap.set("n", "<leader>sp", "<cmd>:sp<CR>")
 
 -- pane navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 
 -- replace current word under cursor. replace next ocurrence with `.`
 vim.keymap.set("n", "<leader>x", "*``cgn")

@@ -11,6 +11,7 @@ vim.keymap.set('n', '<leader><leader>', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- git
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gbr', builtin.git_branches, {})
@@ -36,9 +37,6 @@ vim.keymap.set('n', '<leader>dm', function()
     vim.cmd("DiffviewOpen origin/main")
 end)
 vim.keymap.set('n', '<leader>dvc', function()
-    vim.cmd("DiffviewClose")
-end)
-vim.keymap.set('n', '<leader>dvo', function()
     vim.cmd("DiffviewClose")
 end)
 

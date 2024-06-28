@@ -37,7 +37,6 @@ return require('packer').startup(function(use)
       { 'L3MON4D3/LuaSnip' }, -- Required
     }
   }
-  use 'nvim-tree/nvim-web-devicons'
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use('ryanoasis/vim-devicons')
   use('HiPhish/nvim-ts-rainbow2')
@@ -75,4 +74,5 @@ return require('packer').startup(function(use)
       require("oil").setup()
     end,
   })
+  use 'DaikyXendo/nvim-material-icon'
 end)

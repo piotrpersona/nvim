@@ -75,4 +75,12 @@ return require('packer').startup(function(use)
     end,
   })
   use 'DaikyXendo/nvim-material-icon'
+  use {
+    'j-hui/fidget.nvim',
+    config = function()
+      require("fidget").setup {
+        -- options
+      }
+    end
+  }
 end)

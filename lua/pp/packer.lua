@@ -78,4 +78,5 @@ return require('packer').startup(function(use)
       }
     end
   }
+  use 'aznhe21/actions-preview.nvim'
 end)

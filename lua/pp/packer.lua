@@ -68,12 +68,7 @@ return require('packer').startup(function(use)
   use 'ayu-theme/ayu-vim'
   use 'techtuner/aura-neovim'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-  use({
-    "stevearc/oil.nvim",
-    config = function()
-      require("oil").setup()
-    end,
-  })
+  use 'stevearc/oil.nvim'
   use 'DaikyXendo/nvim-material-icon'
   use {
     'j-hui/fidget.nvim',

@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
-  -- use('HiPhish/nvim-ts-rainbow2')
+  use('HiPhish/nvim-ts-rainbow2')
   use {
     'j-hui/fidget.nvim',
     config = function()
@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
   }
   -- Productivity
   use('mbbill/undotree')
-  -- use('tpope/vim-fugitive')
+  use('tpope/vim-fugitive')
   use('theprimeagen/harpoon')
   use('preservim/nerdcommenter')
   use {

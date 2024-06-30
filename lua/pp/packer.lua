@@ -86,8 +86,4 @@ return require('packer').startup(function(use)
 
   -- Python
   use 'piotrpersona/tele-conda'
-
-  -- Golang
-  use('crispgm/nvim-go')
-  use('rcarriga/nvim-notify')
 end)

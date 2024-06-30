@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
   }
   -- Productivity
   use('mbbill/undotree')
-  use('tpope/vim-fugitive')
+  -- use('tpope/vim-fugitive')
   use('theprimeagen/harpoon')
   use('preservim/nerdcommenter')
   use {

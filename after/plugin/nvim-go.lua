@@ -1,6 +1,6 @@
 require('go').setup({
     -- notify: use nvim-notify
-    notify = true,
+    notify = false,
     -- auto commands
     auto_format = true,
     auto_lint = true,

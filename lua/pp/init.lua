@@ -1,5 +1,4 @@
 require("pp.packer")
 require("pp.autocmd")
 require("pp.remap")
-require("pp.theme")
 require("pp.set")

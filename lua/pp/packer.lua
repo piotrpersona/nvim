@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use('ryanoasis/vim-devicons')
   use('HiPhish/nvim-ts-rainbow2')
-  use('fatih/vim-go')
+  -- use('fatih/vim-go')
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   use { "catppuccin/nvim", as = "catppuccin" }
   use('preservim/nerdcommenter')
@@ -79,4 +79,7 @@ return require('packer').startup(function(use)
     end
   }
   use 'aznhe21/actions-preview.nvim'
+  -- nvim-go
+  use('crispgm/nvim-go')
+  use('rcarriga/nvim-notify')
 end)

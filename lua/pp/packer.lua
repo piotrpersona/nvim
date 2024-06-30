@@ -13,6 +13,11 @@ return require('packer').startup(function(use)
 
   -- Appeareance 
   use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  use 'nvim-tree/nvim-web-devicons'
+  use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
@@ -25,8 +30,6 @@ return require('packer').startup(function(use)
       }
     end
   }
-  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-  use('nvim-treesitter/playground')
 
   -- Themes
   use 'folke/tokyonight.nvim'
@@ -41,25 +44,18 @@ return require('packer').startup(function(use)
   -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     requires = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' }, -- Required
-      {                        -- Optional
-        'williamboman/mason.nvim',
-        run = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      --- Uncomment the two plugins below if you want to manage the language servers from neovim
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' }, -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' }, -- Required
+      {'neovim/nvim-lspconfig'},
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'L3MON4D3/LuaSnip'},
     }
   }
-
   -- Productivity
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
@@ -81,6 +77,7 @@ return require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',   -- OPTIONAL: for git status
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
   } }
+  use 'prichrd/netrw.nvim'
 
   -- Git
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -89,8 +86,4 @@ return require('packer').startup(function(use)
 
   -- Python
   use 'piotrpersona/tele-conda'
-
-  -- Golang
-  use('crispgm/nvim-go')
-  use('rcarriga/nvim-notify')
 end)

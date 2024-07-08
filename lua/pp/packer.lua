@@ -41,6 +41,9 @@ return require('packer').startup(function(use)
   use 'techtuner/aura-neovim'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   use 'ofirgall/ofirkai.nvim'
+  use "rebelot/kanagawa.nvim"
+  use 'fedepujol/cosmos.nvim'
+  use 'koalhack/koalight.nvim'
 
   -- LSP
   use {

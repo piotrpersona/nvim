@@ -1,4 +1,6 @@
 function setColorScheme()
+    vim.opt.termguicolors = true
+
     vim.opt.guicursor = 'n-v-c:block-Cursor,i:block-iCursor-blinkwait300-blinkon200-blinkoff150'
     vim.api.nvim_set_hl(0, 'LineNr', { fg = '#b55387' })
     vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#42363c' })

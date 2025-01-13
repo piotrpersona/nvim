@@ -6,17 +6,29 @@ lsp.preset("recommended")
 require("mason").setup()
 require('mason-lspconfig').setup({
 	ensure_installed = {
-		"clangd",
+		-- .NET
 		"dotls",
-		"pylsp",
+		-- Go
+		"gopls",
+		"gofumpt",
 		"golangci_lint_ls",
+		"goimports",
+		-- Lua
 		"lua_ls",
+		-- Docker
 		"docker_compose_language_service",
 		"dockerls",
+		-- JS
 		"tsserver",
+		-- Misc
 		"rust_analyzer",
 		"bashls",
-		"gopls"
+		"clangd",
+		-- Python
+		"python_lsp_server",
+		"black",
+		-- API
+		"buf"
 	},
 })
 
@@ -41,6 +53,7 @@ lspconfig.gopls.setup({
 		},
 	},
 })
+lspconfig.pylsp.setup({})
 
 local cmp = require('cmp')
 

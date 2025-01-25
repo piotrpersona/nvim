@@ -28,7 +28,9 @@ require('mason-lspconfig').setup({
 		"python_lsp_server",
 		"black",
 		-- API
-		"buf"
+		"buf",
+		-- ZIG
+		"zls"
 	},
 })
 
@@ -54,6 +56,7 @@ lspconfig.gopls.setup({
 	},
 })
 lspconfig.pylsp.setup({})
+lspconfig.zls.setup({})
 
 local cmp = require('cmp')
 

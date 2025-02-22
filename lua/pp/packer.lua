@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
   use "rebelot/kanagawa.nvim"
   use 'fedepujol/cosmos.nvim'
   use 'koalhack/koalight.nvim'
+  use 'marko-cerovac/material.nvim'
 
   -- LSP
   use {

@@ -1,5 +1,14 @@
 vim.keymap.set({ "v", "n" }, "<leader>.", require("actions-preview").code_actions)
 
+vim.keymap.set("n", "<leader>i", function()
+    vim.lsp.buf.code_action({
+        filter = function(action)
+            return action.title:match("Fill")
+        end,
+        apply = true,
+    })
+end, { silent = true, noremap = true, desc = "Auto Fill Struct/Class" })
+
 require("actions-preview").setup {
   -- options for vim.diff(): https://neovim.io/doc/user/lua.html#vim.diff()
   diff = {

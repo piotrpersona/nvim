@@ -52,6 +52,9 @@ lspconfig.gopls.setup({
 			analyses = {
 				fillstruct = true
 			},
+			gofumpt = true,
+			goimports = true,
+			usePlaceholders = true,
 		},
 	},
 })

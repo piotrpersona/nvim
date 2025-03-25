@@ -90,4 +90,8 @@ return require('packer').startup(function(use)
 
   -- Python
   use 'piotrpersona/tele-conda'
+
+  -- Go
+  use 'fatih/vim-go'
+
 end)

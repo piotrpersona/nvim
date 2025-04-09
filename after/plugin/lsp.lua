@@ -6,8 +6,6 @@ lsp.preset("recommended")
 require("mason").setup()
 require('mason-lspconfig').setup({
 	ensure_installed = {
-		-- .NET
-		"dotls",
 		-- Go
 		"gopls",
 		"gofumpt",
@@ -15,9 +13,6 @@ require('mason-lspconfig').setup({
 		"goimports",
 		-- Lua
 		"lua_ls",
-		-- Docker
-		"docker_compose_language_service",
-		"dockerls",
 		-- JS
 		"tsserver",
 		-- Misc

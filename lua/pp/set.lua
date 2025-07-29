@@ -33,5 +33,13 @@ vim.opt.colorcolumn = "80"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.cmd [[colorscheme kanagawa-wave]]
-setColorScheme()
+local currentHour = tonumber(os.date("%H"))
+
+local isDayTime = currentHour >= 7 and currentHour < 19
+if isDayTime then
+    vim.cmd [[colorscheme tokyonight-day]]
+else
+    vim.cmd [[colorscheme kanagawa-wave]]
+end
+
+setColorScheme(isDayTime)

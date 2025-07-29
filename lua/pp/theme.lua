@@ -15,6 +15,10 @@ function setColorScheme(isDayTime)
     }
 
     local palette = isDayTime and palettes.day or palettes.night
+    
+    if isDayTime then
+        vim.api.nvim_set_hl(0, "Normal", { fg = "#0b0b0d" })
+    end
 
     vim.opt.guicursor = 'n-v-c:block-Cursor,i:block-iCursor-blinkwait300-blinkon200-blinkoff150'
 

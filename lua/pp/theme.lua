@@ -4,7 +4,7 @@ function setColorScheme(isDayTime)
     local palettes = {
         day = {
             line_nr = "#3118ad",
-            cursor_line_bg = "#f5a9cf",
+            cursor_line_bg = "#efedff",
             cursor_line_nr = "#b3005c"
         },
         night = {

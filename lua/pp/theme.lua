@@ -16,6 +16,7 @@ function setColorScheme(isDayTime)
 
     local palette = isDayTime and palettes.day or palettes.night
     
+
     vim.opt.guicursor = 'n-v-c:block-Cursor,i:block-iCursor-blinkwait300-blinkon200-blinkoff150'
 
     vim.api.nvim_set_hl(0, 'LineNr', { fg = palette.line_nr })
@@ -27,4 +28,7 @@ function setColorScheme(isDayTime)
     vim.api.nvim_set_hl(0, 'iCursor', { fg = '#ffffff', bg = '#4fb2bd' })
     -- Popup menu
     vim.api.nvim_set_hl(0, 'PmenuSel', { bg = '#53329c', fg = '#dddddd' })
+
+    if isDayTime then
+    end
 end

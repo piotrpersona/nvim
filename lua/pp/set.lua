@@ -37,9 +37,10 @@ local currentHour = tonumber(os.date("%H"))
 
 local isDayTime = currentHour >= 7 and currentHour < 19
 if isDayTime then
-    vim.cmd [[colorscheme rose-pine-dawn]]
+    -- vim.cmd [[colorscheme rose-pine-dawn]]
 else
-    vim.cmd [[colorscheme kanagawa-wave]]
+    -- vim.cmd [[colorscheme kanagawa-wave]]
 end
+vim.cmd [[colorscheme duskfox]]
 
-setColorScheme(isDayTime)
+setColorScheme(false)

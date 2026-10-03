@@ -8,27 +8,28 @@ require('mason-lspconfig').setup({
 	ensure_installed = {
 		-- Go
 		"gopls",
-		"gofumpt",
 		"golangci_lint_ls",
-		"goimports",
 		-- Lua
 		"lua_ls",
 		-- JS
-		"tsserver",
+		"ts_ls",
 		-- Misc
 		"rust_analyzer",
 		"bashls",
 		"clangd",
 		-- Python
 		"python_lsp_server",
-		"black",
 		-- API
-		"buf",
+		"buf_ls",
 		-- ZIG
 		"zls"
 	},
 })
 
+
+require('mason-tool-installer').setup({
+	ensure_installed = { "gofumpt", "goimports", "black" },
+})
 
 lsp.set_preferences({
 	suggest_lsp_servers = true,
@@ -40,8 +41,13 @@ lsp.set_preferences({
 	}
 })
 
+local asdf_shims = (vim.env.ASDF_DATA_DIR or (vim.env.HOME .. "/.asdf")) .. "/shims"
+
 lspconfig.gopls.setup({
-	cmd_env = { GOFLAGS = "-tags=wireinject" },
+	cmd_env = {
+		GOFLAGS = "-tags=wireinject",
+		PATH = asdf_shims .. ":" .. vim.env.PATH,
+	},
 	settings = {
 		gopls = {
 			analyses = {

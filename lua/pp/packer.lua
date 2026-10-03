@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
       --- Uncomment the two plugins below if you want to manage the language servers from neovim
       {'williamboman/mason.nvim'},
       {'williamboman/mason-lspconfig.nvim'},
+      {'WhoIsSethDaniel/mason-tool-installer.nvim'},
 
       {'neovim/nvim-lspconfig'},
       {'hrsh7th/nvim-cmp'},
@@ -87,11 +88,5 @@ return require('packer').startup(function(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   use 'aznhe21/actions-preview.nvim'
-
-  -- Python
-  use 'piotrpersona/tele-conda'
-
-  -- Go
-  use 'fatih/vim-go'
 
 end)

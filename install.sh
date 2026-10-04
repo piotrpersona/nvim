@@ -43,14 +43,3 @@ fi
 
 need tree-sitter || say "WARNING: tree-sitter CLI missing, :TSInstallAll will fail"
 need gopls || say "WARNING: gopls missing, run: go install golang.org/x/tools/gopls@latest"
-
-# copilot.vim lives under pack/, which is gitignored, so it does not dirty
-# this repo now that the live config is a symlink back into it.
-COPILOT="${SRC}/pack/github/start/copilot.vim"
-if [ -d "${COPILOT}/.git" ]; then
-    git -C "${COPILOT}" pull --ff-only --quiet || say "could not update copilot.vim"
-else
-    mkdir -p -- "$(dirname -- "${COPILOT}")"
-    git clone --quiet --depth=1 https://github.com/github/copilot.vim.git "${COPILOT}"
-fi
-say "copilot.vim ready"

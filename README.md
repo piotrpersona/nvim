@@ -81,7 +81,7 @@ Completion is native and auto-triggers; `<C-n>`/`<C-p>` move, `<CR>` accepts,
 
 | Key | Action |
 |---|---|
-| `<C-h/j/k/l>` | move between panes |
+| `<leader>w` | next window (`2<leader>w` jumps to window 2; `<C-w>h/j/k/l` still works) |
 | `<leader>\|` / `<leader>_` | split vertical / horizontal |
 | `<leader>a` / `<C-e>` / `<leader>1`-`<leader>4` | harpoon add / menu / jump to file |
 | `]q` / `[q` / `]l` / `[l` / `<leader>q` | quickfix and loclist nav, toggle quickfix |

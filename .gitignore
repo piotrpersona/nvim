@@ -3,3 +3,12 @@ pack/
 lazy-lock.json
 .DS_Store
 nvim-pack-lock.json
+
+# local agent tool state
+.claude/settings.local.json
+.claude/.headroom_wrap_*
+.codex/
+.serena/
+
+# generated copy of CLAUDE.md for Codex; CLAUDE.md is the source
+AGENTS.md

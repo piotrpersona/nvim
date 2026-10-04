@@ -1,7 +1,7 @@
-vim.deprecate = function() end
-
-require("pp.packer")
+require("pp.plugins")
+require("pp.set")
 require("pp.autocmd")
 require("pp.remap")
-require("pp.set")
-require("pp.go")
+require("pp.search")
+require("pp.git")
+require("pp.lsp")

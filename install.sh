@@ -26,6 +26,24 @@ if [ ! -L "${DST}" ]; then
 fi
 say "link   ${DST} -> ${SRC}"
 
+# Language servers and the treesitter CLI used to come from mason.nvim, which is
+# gone: nvim now runs whatever is on PATH (see lsp/*.lua). gopls comes from asdf.
+need() { command -v "${1}" >/dev/null 2>&1; }
+
+if need brew; then
+    for tool in tree-sitter-cli lua-language-server; do
+        if ! brew list --formula "${tool}" >/dev/null 2>&1; then
+            say "brew  ${tool}"
+            brew install --quiet "${tool}" || say "could not install ${tool}"
+        fi
+    done
+else
+    say "no brew; install tree-sitter-cli and lua-language-server yourself"
+fi
+
+need tree-sitter || say "WARNING: tree-sitter CLI missing, :TSInstallAll will fail"
+need gopls || say "WARNING: gopls missing, run: go install golang.org/x/tools/gopls@latest"
+
 # copilot.vim lives under pack/, which is gitignored, so it does not dirty
 # this repo now that the live config is a symlink back into it.
 COPILOT="${SRC}/pack/github/start/copilot.vim"

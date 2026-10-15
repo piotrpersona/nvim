@@ -27,7 +27,7 @@ map("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>", { desc = "tmux s
 
 -- Panes: <C-w>h/j/k/l stays built in for directional jumps.
 map("n", "<leader>w", "<C-w>w", { desc = "Next window" })
-map("n", "<leader>|", "<cmd>vsplit<CR>", { desc = "Split vertical" })
+map("n", "<leader>vs", "<cmd>vsplit<CR>", { desc = "Split vertical" })
 map("n", "<leader>_", "<cmd>split<CR>", { desc = "Split horizontal" })
 
 -- Lists

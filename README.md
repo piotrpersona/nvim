@@ -82,7 +82,7 @@ Completion is native and auto-triggers; `<C-n>`/`<C-p>` move, `<CR>` accepts,
 | Key | Action |
 |---|---|
 | `<leader>w` | next window (`2<leader>w` jumps to window 2; `<C-w>h/j/k/l` still works) |
-| `<leader>\|` / `<leader>_` | split vertical / horizontal |
+| `<leader>vs` / `<leader>_` | split vertical / horizontal (`<C-w>v` / `<C-w>s` built in) |
 | `<leader>a` / `<C-e>` / `<leader>1`-`<leader>4` | harpoon add / menu / jump to file |
 | `]q` / `[q` / `]l` / `[l` / `<leader>q` | quickfix and loclist nav, toggle quickfix |
 | `<leader>s` / `<leader>x` / `<leader>X` | substitute word / change word repeatable with `.` |

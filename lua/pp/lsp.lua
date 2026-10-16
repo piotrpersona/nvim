@@ -15,7 +15,7 @@ vim.diagnostic.config({
 })
 
 local servers = {
-    "gopls", "lua_ls", "pylsp", "ts_ls", "bashls", "zls", "clangd", "rust_analyzer",
+    "gopls", "lua_ls", "pylsp", "ruff", "tsgo", "html", "cssls", "bashls", "zls", "clangd", "rust_analyzer",
 }
 
 local available = {}
@@ -48,6 +48,62 @@ end
 
 local format_on_save = { go = true, lua = true, zig = true, rust = true, proto = true }
 
+local function prettier(bufnr)
+    local root = vim.fs.root(bufnr, "node_modules")
+    local bin = root and vim.fs.joinpath(root, "node_modules", ".bin", "prettier")
+    return { bin and vim.fn.executable(bin) == 1 and bin or "prettier", "--stdin-filepath", vim.api.nvim_buf_get_name(bufnr) }
+end
+
+local formatters = {
+    python = function(bufnr) return { "black", "--quiet", "--stdin-filename", vim.api.nvim_buf_get_name(bufnr), "-" } end,
+    javascript = prettier,
+    javascriptreact = prettier,
+    typescript = prettier,
+    typescriptreact = prettier,
+    html = prettier,
+    css = prettier,
+}
+
+local function format_with(bufnr, cmd)
+    if vim.fn.executable(cmd[1]) == 0 then
+        return
+    end
+    local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+    local out = vim.system(cmd, { stdin = lines }):wait(5000)
+    if out.code ~= 0 then
+        vim.notify(vim.fs.basename(cmd[1]) .. ": " .. vim.trim(out.stderr or ""), vim.log.levels.WARN)
+        return
+    end
+    local formatted = vim.split(out.stdout, "\n")
+    table.remove(formatted)
+    local hunks = vim.text.diff(table.concat(lines, "\n") .. "\n", out.stdout, { result_type = "indices" })
+    for i = #hunks, 1, -1 do
+        local old_start, old_count, new_start, new_count = unpack(hunks[i])
+        local first = old_count == 0 and old_start or old_start - 1
+        vim.api.nvim_buf_set_lines(bufnr, first, first + old_count, false,
+            vim.list_slice(formatted, new_start, new_start + new_count - 1))
+    end
+end
+
+local function format(bufnr)
+    local formatter = formatters[vim.bo[bufnr].filetype]
+    if formatter then
+        format_with(bufnr, formatter(bufnr))
+    else
+        vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 2000 })
+    end
+end
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = vim.api.nvim_create_augroup("pp.format", { clear = true }),
+    callback = function(args)
+        local formatter = formatters[vim.bo[args.buf].filetype]
+        if formatter and not vim.b[args.buf].pp_large_file then
+            format_with(args.buf, formatter(args.buf))
+        end
+    end,
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("pp.lsp", { clear = true }),
     callback = function(args)
@@ -77,7 +133,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts("Next diagnostic"))
         map("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts("Previous diagnostic"))
         map("i", "<C-h>", vim.lsp.buf.signature_help, opts("Signature help"))
-        map("n", "<leader>F", function() vim.lsp.buf.format({ timeout_ms = 2000 }) end, opts("Format buffer"))
+        map("n", "<leader>F", function() format(bufnr) end, opts("Format buffer"))
         map("n", "<leader>i", function()
             vim.lsp.buf.code_action({
                 filter = function(action) return action.title:match("Fill") ~= nil end,

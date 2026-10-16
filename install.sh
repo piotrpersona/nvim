@@ -26,19 +26,31 @@ if [ ! -L "${DST}" ]; then
 fi
 say "link   ${DST} -> ${SRC}"
 
-# Language servers and the treesitter CLI used to come from mason.nvim, which is
-# gone: nvim now runs whatever is on PATH (see lsp/*.lua). gopls comes from asdf.
+# Language servers, formatters and the treesitter CLI used to come from
+# mason.nvim, which is gone: nvim now runs whatever is on PATH (see lsp/*.lua).
+# gopls comes from asdf, Python tools from uv, the rest from brew.
 need() { command -v "${1}" >/dev/null 2>&1; }
 
 if need brew; then
-    for tool in tree-sitter-cli lua-language-server; do
+    for tool in tree-sitter-cli lua-language-server typescript vscode-langservers-extracted prettier; do
         if ! brew list --formula "${tool}" >/dev/null 2>&1; then
             say "brew  ${tool}"
             brew install --quiet "${tool}" || say "could not install ${tool}"
         fi
     done
 else
-    say "no brew; install tree-sitter-cli and lua-language-server yourself"
+    say "no brew; install tree-sitter-cli, lua-language-server, typescript, vscode-langservers-extracted and prettier yourself"
+fi
+
+if need uv; then
+    for pair in pylsp:python-lsp-server ruff:ruff black:black; do
+        if ! need "${pair%%:*}"; then
+            say "uv    ${pair#*:}"
+            uv tool install --quiet "${pair#*:}" || say "could not install ${pair#*:}"
+        fi
+    done
+else
+    say "no uv; install python-lsp-server, ruff and black yourself"
 fi
 
 need tree-sitter || say "WARNING: tree-sitter CLI missing, :TSInstallAll will fail"

@@ -4,8 +4,8 @@ vim.cmd.colorscheme("duskfox")
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#b55387" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#42363c" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#d9bf41" })
-vim.api.nvim_set_hl(0, "Cursor", { bg = "#e0a3c4" })
-vim.api.nvim_set_hl(0, "iCursor", { fg = "#ffffff", bg = "#4fb2bd" })
+vim.api.nvim_set_hl(0, "Cursor", { bg = "#11141a" })
+vim.api.nvim_set_hl(0, "iCursor", { bg = "#164e58" })
 vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#53329c", fg = "#dddddd" })
 
 vim.opt.guicursor = "n-v-c:block-Cursor,i:block-iCursor-blinkwait300-blinkon200-blinkoff150"
